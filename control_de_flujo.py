@@ -2,9 +2,11 @@
 """Guarde en lista `naturales` los primeros 100 números naturales (desde el 1) 
 usando el bucle while
 """
-
-
-
+n=1
+naturales=[]
+while n<=100 :
+  naturales.append(n)
+  n+=1
 
 """Guarde en `acumulado` una lista con el siguiente patrón:
 
@@ -12,15 +14,26 @@ usando el bucle while
 
 Hasta el número 50.
 """
-
+rango=list(range(2,51))
+a=1
+conc='1'
+acumulado=list()
+acumulado.append(conc)
+for a in rango:
+  conc= conc+' '+str(a)
+  acumulado.append(conc)
+  a+=1
 
 
 
 """Guarde en `suma100` el entero de la suma de todos los números entre 1 y 100:
 """
 
-
-
+n=1
+suma100=0
+while n<=100:
+  suma100+=n
+  n+=1
 
 
 
@@ -30,9 +43,15 @@ separados por coma, así:
 '134,268,...'
 
 """
-
-
-
+ran=list(range(1,11))
+tabla100=''
+for a in ran:
+  if a==1:
+    tabla100= str(a*134)
+  else:
+    tabla100= tabla100+','+str(a*134)
+  a+=1
+print (tabla100)
 
 
 """Guardar en `multiplos3` la cantidad de números que son múltiplos de 3 y 
@@ -40,8 +59,12 @@ menores o iguales a 300 en la lista `lista1` que se define a continuación (la l
 está ordenada).
 """
 lista1 = [12, 15, 20, 27, 32, 39, 42, 48, 55, 66, 75, 82, 89, 91, 93, 105, 123, 132, 150, 180, 201, 203, 231, 250, 260, 267, 300, 304, 310, 312, 321, 326]
-
-
+multiplos3=0
+for n in lista1:
+  if n<300 and n%3==0:
+    multiplos3+=1
+  print(n)
+print(multiplos3)
 
 
 
@@ -59,11 +82,24 @@ lista1 = [12, 15, 20, 27, 32, 39, 42, 48, 55, 66, 75, 82, 89, 91, 93, 105, 123, 
   '1'
 ]
 """
-
-
-
-
-
+tam=50
+nlis=50
+ser=0
+regresivo50=list()
+while tam>0:
+  con=''
+  while ser<tam:
+    r2=list(range(1,nlis+1))
+    if con=='':
+      con=str(r2.pop())
+    elif len(r2)>0:
+      con=con+' '+str(r2.pop())
+    nlis-=1
+    ser+=1
+  regresivo50.append(con)
+  tam-=1
+  ser=0
+  nlis=tam
 
 """Invierta la siguiente lista usando el bucle for y guarde el resultado en 
 `invertido` (sin hacer uso de la función `reversed` ni del método `reverse`)
